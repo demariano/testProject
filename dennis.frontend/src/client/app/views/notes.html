@@ -1,0 +1,47 @@
+<toaster-container  toaster-options="{'time-out': 3000, 'close-button':true}"></toaster-container>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+         <span class="btn-group pull-right">
+            <button ng-click="createNote()" class="btn btn-success ">New</button>
+          </span>
+        <h4>Notes</h4>
+         </div>
+        <div class="panel-body">
+            <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)">{{alert.msg}}</div>
+          <div ng-repeat="item in data"  class="list-group-item clearfix">
+             
+             
+              <div>
+                <h5 class="mb-1">{{item.title}}</h5>
+                <p class="mb-1">{{item.content}}</p>
+                <span class="btn-group pull-right">
+                        <button class="btn btn-success  " ng-click="viewNote(item)">View</button>
+                        <button
+                            class="btn btn-danger"
+                            mwl-confirm
+                            title="Delete"
+                            message="Confirm Deletion"
+                            confirm-text="Delete"
+                            cancel-text="Cancel"
+                            placement="top"
+                            on-confirm="deleteNote(item)"
+                            on-cancel=""
+                            confirm-button-type="danger"
+                            cancel-button-type="default">
+                           Delete
+                      </button>
+    
+                </span>
+            </div>
+              
+               
+             
+            
+            </div>
+        </div>
+      </div>
+    
+    
+     
+    
+    

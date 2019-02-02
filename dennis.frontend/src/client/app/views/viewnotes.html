@@ -1,0 +1,41 @@
+<toaster-container  toaster-options="{'time-out': 3000, 'close-button':true}"></toaster-container>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+         <span class="btn-group pull-right">
+            <button ng-click="editRecord()" ng-hide="hideEditButton" class="btn btn-success ">Edit</button>
+            <button ng-click="saveRecord()" ng-hide="hideSaveButton" class="btn btn-success ">Save</button>
+            <button ng-click="backToHome()"  class="btn btn-default ">Back</button>
+          </span>
+        <h4>View / Edit Notes</h4>
+         </div>
+        <div class="panel-body">
+        
+            <div class="col-xs-12 col-sm-12">
+                <form role="form" class='form-horizontal'>
+                    <div class="form-group">
+                        <div class="col-xs-3 text-right">
+                            <label for="cpTitle">Title</label>
+                        </div>
+                        <div class="col-xs-9">
+                            <input type="text" ng-readonly="editEnabled"  ng-model="record.title" class="form-control" placeholder="Notes Title" id="cpTitle" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-3 text-right">
+                            <label for="cpDesc">Content</label>
+                        </div>
+                        <div class="col-xs-9">
+                            <textarea class="form-control" ng-readonly="editEnabled" ng-model="record.content" rows="3" placeholder="Contents" id="cpDesc"></textarea>
+                        </div>
+                    </div>
+                    
+                   
+                </form>
+           
+        </div>
+      </div>
+    
+    
+     
+    
+    
